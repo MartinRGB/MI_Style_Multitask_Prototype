@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">WaterfallLayout</string>
+    <string name="title_activity_list">Waterfall</string>
+    <string name="title_activity_logo">LogoActivity</string>
+</resources>

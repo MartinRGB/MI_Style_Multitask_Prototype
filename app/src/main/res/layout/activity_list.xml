@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                 xmlns:tools="http://schemas.android.com/tools"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:id="@+id/mainwindow"
+                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                 tools:context="com.martinrgb.waterfalllayout.recyclerview.ListActivity">
+
+    <LinearLayout
+        android:id="@+id/backgroundview"
+        android:background="@drawable/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+
+
+        <ImageView
+            android:id="@+id/iconlist"
+            android:src="@drawable/iconlist"
+            android:layout_width="match_parent"
+            android:alpha="1"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"/>
+
+        <!--<ImageView-->
+            <!--android:id="@+id/statsbarww"-->
+            <!--android:src="@drawable/statshome"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:alpha="1"-->
+            <!--android:layout_height="wrap_content"/>-->
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/statsbarww"
+        android:src="@drawable/statshome"
+        android:layout_width="wrap_content"
+        android:alpha="1"
+        android:layout_height="wrap_content"/>
+
+
+
+    <eightbitlab.com.blurview.BlurView
+        android:id="@+id/blurView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--Any child View here, TabLayout for example-->
+
+    </eightbitlab.com.blurview.BlurView>
+    <!--<com.chauthai.overscroll.RecyclerViewBouncy-->
+        <!--android:id="@+id/recycler_view"-->
+        <!--android:overScrollMode="never"-->
+        <!--android:paddingLeft="8dp"-->
+        <!--android:paddingRight="8dp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"/>-->
+
+
+    <!--<ImageView-->
+        <!--android:id="@+id/fakeblurView"-->
+        <!--android:src="@drawable/background"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:alpha="0"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_gravity="center"/>-->
+
+
+
+    <ImageView
+        android:id="@+id/blackmask"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0"
+        android:background="#000000"/>
+
+    <ImageView
+        android:id="@+id/tinttext"
+        android:src="@drawable/tinttext"
+        android:layout_width="wrap_content"
+        android:alpha="0"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
+
+
+    <com.martinrgb.waterfalllayout.recyclerview.TouchRecyclerView
+        android:id="@+id/recycler_view"
+        android:overScrollMode="always"
+        android:paddingTop="171.4dp"
+        android:paddingBottom="16dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:clipToPadding="false"
+        android:clipChildren="false"
+        android:layout_width="match_parent"
+        android:layout_height="2340px">
+
+    </com.martinrgb.waterfalllayout.recyclerview.TouchRecyclerView>
+
+    <!--<com.chauthai.overscroll.RecyclerViewBouncy-->
+        <!--android:id="@+id/recycler_view"-->
+        <!--app:tension="1000"-->
+        <!--app:friction="200"-->
+
+        <!--app:gapLimit="220"-->
+        <!--app:speedFactor="5"-->
+
+        <!--app:viewCountEstimateSize="5"-->
+        <!--app:maxAdapterSizeToEstimate="20"-->
+        <!--android:paddingTop="171.4dp"-->
+        <!--android:paddingBottom="16dp"-->
+        <!--android:paddingLeft="8dp"-->
+        <!--android:paddingRight="8dp"-->
+        <!--android:clipToPadding="false"-->
+        <!--android:clipChildren="false"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="2160px">-->
+
+
+    <!--</com.chauthai.overscroll.RecyclerViewBouncy>-->
+
+
+
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/gestureContainer"
+        android:clipChildren="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:translationZ="20001px"
+        android:visibility="invisible">
+
+
+        <ImageView
+            android:id="@+id/shadow"
+            android:translationY="0px"
+            android:scaleX="1.11"
+            android:scaleY="1.05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shadowlayer"/>
+
+
+        <com.martinrgb.waterfalllayout.utils.RoundedCornerLayout
+            android:id="@+id/gestureLayout"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/gestureimgview"
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:scaleType="matrix"
+                android:layout_height="match_parent"
+                android:translationZ="20001px"
+                android:background="#00000000"
+                />
+
+
+
+
+        </com.martinrgb.waterfalllayout.utils.RoundedCornerLayout>
+
+
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/statsbar"
+        android:src="@drawable/statsdark"
+        android:layout_width="wrap_content"
+        android:alpha="0"
+        android:layout_height="wrap_content"
+        android:translationZ="20001px"/>
+
+
+    <ImageView
+        android:id="@+id/closebtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/closebtn"
+        android:layout_gravity="center_horizontal|bottom"/>
+
+
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/longpressmenu"
+        android:layout_width="wrap_content"
+        android:visibility="invisible"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/longpressmenuimg"
+            android:src="@drawable/longpressmenu"
+            android:layout_width="wrap_content"
+            android:alpha="1"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/longpressmenutext"
+            android:src="@drawable/longpresstext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+    </RelativeLayout>
+
+
+
+    <com.facebook.rebound.ui.SpringConfiguratorView
+        android:visibility="invisible"
+        android:id="@+id/spring_configurator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:alpha="1"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
+
+    </com.facebook.rebound.ui.SpringConfiguratorView>
+
+    <!--app:-->
+</FrameLayout>

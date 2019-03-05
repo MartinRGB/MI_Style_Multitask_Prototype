@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#717171</color>
+    <color name="dark">#A2A2A2</color>
+    <color name="colorPrimaryDark">#464646</color>
+    <color name="colorAccent">#F4C828</color>
+
+    <color name="colorOverlay">#78ffffff</color>
+    <color name="colorAccentOverlay">#1400bcd4</color>
+    <color name="colorTransparentBlack">#14000000</color>
+    <color name="colorPrimaryTransparent">#6400bcd4</color>
+
+    <color name="primaryColor">@android:color/holo_purple</color>
+    <color name="primaryColorDark">#ccaa66cc</color>
+    <color name="primaryColorLight">@android:color/holo_purple</color>
+    <color name="almostWhite">#EEEEEE</color>
+    <color name="test_color">#50000000</color>
+</resources>
