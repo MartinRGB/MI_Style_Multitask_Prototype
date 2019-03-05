@@ -1773,7 +1773,7 @@ public class ListActivity extends AppCompatActivity {
     List<Card> cardList = new ArrayList<>();
     private TouchRecyclerView recyclerView;
     private Adapter mAdapter;
-    private String[] mName= {"计算器","天气","相册","日历","爱彼迎","滴滴出行"};
+    private String[] mName= {"Application","Application","Application","Application","Application","Application"};
     private int[] mImg= {R.drawable.image0,R.drawable.image1,R.drawable.image2,R.drawable.image3,R.drawable.image4,R.drawable.image5};
     private int[] mIcon= {R.drawable.icon0,R.drawable.icon1,R.drawable.icon2,R.drawable.icon3,R.drawable.icon4,R.drawable.icon5};
     private int[] mSrc= {R.drawable.as0,R.drawable.as1,R.drawable.as2,R.drawable.as3,R.drawable.as4,R.drawable.as5};
