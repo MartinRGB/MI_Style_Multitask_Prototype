@@ -1,5 +1,5 @@
 # MI_Style_Multitask_Prototype
-An prototype simplely explained how to make Xiaomi Style Multitask Interaction.
+An prototype simply explained how to make Xiaomi Style Multitask Interaction.
 
 **THIS IS NOT A LIBRARY,ONLY A DEMO,The Best Resolution to Preview in Emulator is 1080 x 2340 & xxhdpi**
 
