@@ -74,10 +74,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> implem
         mAnimator.addConfig(100,18);
     }
 
-//    public View getViewByPosition(int pos, RecyclerView recyclerView) {
-//        return recyclerView.getChildAt(pos);
-//    }
-
     public void notifyData(List<Card> poiItemList) {
         if (poiItemList != null) {
             int previousSize = CardList.size();
@@ -89,9 +85,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> implem
 
         }
     }
-
-
-
 
     @Override
     public ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -111,8 +104,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> implem
 
 
     int[] startPosition =  new int[2];
-//    private boolean isScaled = true;
-
     private int lastAnimatedPosition = -1;
     @Override
     public void onViewDetachedFromWindow(final ItemViewHolder holder) {
@@ -130,9 +121,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> implem
         }
 
 
-
-
-
         cardImg.setImageResource(CardList.get(position).imgSrc);
 
         if(CardList.get(position).name !=null){
@@ -143,58 +131,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> implem
 
         holder.itemTagIndex = CardList.get(position).tagNum;
 
-//        if (position > lastAnimatedPosition) {
-//            lastAnimatedPosition = position;
-//            Animation animation = AnimationUtils.loadAnimation(mContext, R.anim.slide_up);
-//            animation.setInterpolator(new AccelerateDecelerateInterpolator());
-//            ((ItemViewHolder) holder).itemView.setAnimation(animation);
-//            animation.start();
-//        }
-//
-//        if (position == 0) {
-//            lastAnimatedPosition = position;
-//            Animation animation = AnimationUtils.loadAnimation(mContext, R.anim.slide_up);
-//            animation.setInterpolator(new AccelerateDecelerateInterpolator());
-//            ((ItemViewHolder) holder).itemView.setAnimation(animation);
-//            animation.start();
-//        }
-
-
-
-        //mAnimator.onSpringItemBind(holder.itemView, position);
-
-
-        // 瞎改
-
         mAnimator.setSpringAnimationType(SpringyAdapterAnimationType.NULL);
         mAnimator.onSpringItemCreate(holder.itemView,position);
-//        new Handler().postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//
-//                mAnimator.setSpringAnimationType(SpringyAdapterAnimationType.NULL);
-//                mAnimator.onSpringItemCreate(holder.itemView,position);
-//
-//            }
-//        },100 );
-
-
-//        final View measureView = holder.itemView;
-//        measureView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-//
-//            @Override
-//            public void onGlobalLayout() {
-//                // Do what you need to do here.
-//                // Then remove the listener:
-//
-//
-//                measureView.getLocationInWindow(startPosition);
-//                //Log.e("PosX", String.valueOf(startPosition[0]));
-//                //Log.e("PosY", String.valueOf(startPosition[1]));
-//                measureView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-//            }
-//
-//        });
 
         //Orig
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -212,24 +150,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> implem
 
             }
         });
-
-//        holder.itemView.setOnTouchListener(new View.OnTouchListener() {
-//            @Override
-//            public boolean onTouch(View view, MotionEvent e) {
-//                switch (e.getAction()) {
-//                    case MotionEvent.ACTION_DOWN:
-//                        Log.e("Down","DOWN");
-//                        return false;
-//                    case MotionEvent.ACTION_UP:
-//                        Log.e("Down","DOWN-UP");
-//                        return false;
-//                    case MotionEvent.ACTION_CANCEL:
-//                        break;
-//                }
-//                return true;
-//            }
-//        });
-
 
     }
 
@@ -293,13 +213,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> implem
 
 
             if(rv.getLayoutManager().findViewByPosition(4) == null && CardList.size() > 4 ){
-
                 rv.getLayoutParams().height = 6000;
                 rv.requestLayout();
-                //Log.e("Here","213213231");
             }
             else if(rv.getLayoutManager().findViewByPosition(0) == null){
-                //Log.e("Here","21321325342523452345235231");
             }
 
 
@@ -405,19 +322,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> implem
             removedPos = position;
             Log.e("removePos",String.valueOf(removedPos));
 
-//            if(rv.getLayoutManager().findViewByPosition(removedPos) !=null){
-//
-//                rv.getLayoutManager().findViewByPosition(removedPos).findViewById(R.id.cardcontainer).setScaleX(1);
-//                rv.getLayoutManager().findViewByPosition(removedPos).findViewById(R.id.cardcontainer).setScaleY(1);
-//            }
-//            new Handler().postDelayed(new Runnable() {
-//                @Override
-//                public void run() {
-//
-//
-//                }
-//            },100 );
-//            mSpring.setCurrentValue(0);
         }
     }
 
@@ -432,9 +336,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> implem
 
         Log.e("first",String.valueOf(firstPosition));
         Log.e("second",String.valueOf(secondPosition));
-
-
-
 
         hasSwaped = true;
         firstSwapPos = firstPosition;
@@ -577,25 +478,9 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> implem
     private int lastDragPos;
     @Override
     public void onItemSwipeDrag(float dX,float dY,int position) {
-//        System.out.println("Item On Drag" + "at " + Integer.valueOf(position));
-//        if(!hasVibrate){
-//
-//            VibratorUtil.Vibrate(mContext,10);
-//            hasVibrate =true;
-//
-//        }
-
         if(rv.getLayoutManager().findViewByPosition(position) !=null){
             mListener.onItemOnDragging(true);
 
-//            if(rv.getLayoutManager().findViewByPosition(position).findViewById(R.id.cardcontainer).getScaleX() == 1){
-//                rv.getLayoutManager().findViewByPosition(position).findViewById(R.id.cardcontainer).animate().scaleX(1.05f).setDuration(50).setInterpolator(new DecelerateInterpolator()).start();
-//                rv.getLayoutManager().findViewByPosition(position).findViewById(R.id.cardcontainer).animate().scaleY(1.05f).setDuration(50).setInterpolator(new DecelerateInterpolator()).start();
-//            }
-
-//            rv.getLayoutManager().findViewByPosition(position).findViewById(R.id.cardcontainer).setScaleX(Math.min(1.05f,1 + Math.abs(dX/4000)));
-//            rv.getLayoutManager().findViewByPosition(position).findViewById(R.id.cardcontainer).setScaleY(Math.min(1.05f,1 + Math.abs(dX/4000)));
-//            rv.getLayoutManager().findViewByPosition(position).findViewById(R.id.cardcontainer).setTranslationX(dX);
             rv.getLayoutManager().findViewByPosition(position).findViewById(R.id.iv_card).setElevation(18 + Math.abs(dX)/200);
             rv.getLayoutManager().findViewByPosition(position).findViewById(R.id.iv_container).setAlpha(1 - Math.abs(dX/500));
             rv.getLayoutManager().findViewByPosition(position).findViewById(R.id.iv_container).setTranslationX(-dX);
@@ -605,19 +490,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> implem
     // ###### Long Press Item (deprecated) ######
     @Override
     public void onItemLongPress(float dX,float dY,int position) {
-        //System.out.println("Item On Long Press" + "at " + Integer.valueOf(position) + "X is " + Float.valueOf(dX) + "Y is " + Float.valueOf(dY));
-
-//        if(position !=0){
-//            System.out.println("Long Press2");
-//
-//            if(!disableItemEventListener){
-//                mListener.onItemLongPressed(true,position);
-//            }
-//
-//            prevLongPressPosition = position;
-//        }
-
-        //System.out.println("Long Press2");
 
         if(!disableItemEventListener){
             mListener.onItemOnDragging(false);
@@ -631,14 +503,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> implem
 
     private final onItemEventListener mListener;
     public interface onItemEventListener {
-        /**
-         * On item click.
-         *
-         * @param view
-         *     the view
-         * @param position
-         *     the position
-         */
         void onItemSelected(int position);
         void onItemUnselected(int position);
         void onItemLongPressed(boolean boo,int position);

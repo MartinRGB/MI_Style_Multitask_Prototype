@@ -81,9 +81,6 @@ public class ListActivity extends AppCompatActivity {
         mBlurSpring.setCurrentValue(25);
         mIconSpring.setEndValue(1);
 
-
-
-
         Log.e("RV",String.valueOf(recyclerView.getPaddingTop()));
 
         recyclerView.setAlpha(0);
@@ -183,22 +180,14 @@ public class ListActivity extends AppCompatActivity {
     private static SpringConfig mStatsSlow = SpringConfig.fromOrigamiTensionAndFriction(100, 28);
     private static SpringConfig mLongPressConfig = SpringConfig.fromOrigamiTensionAndFriction(120, 20);
     private static SpringConfig mLongPressSpringConfig = SpringConfig.fromOrigamiTensionAndFriction(200, 8);
-    private static SpringConfig mLongPressConfig2 = SpringConfig.fromOrigamiTensionAndFriction(150, 15);
     private float bgScaleValue = 1.5f;
     private float paddingFix = 394 + 144 - 12 - 3 - 80 - 83;  // 264dp 702  152dp 394   |  3 is icon 56-64 fix
     private float rvPosFix = 0;
-    private float rvScaleX,rvScaleY,rvTransX,rvTransY;
-    private float cdScaleX,cdScaleY,cdTransX,cdTransY;
     private float nowScaleX,nowScaleY;
-//    private Spring mLayoutDownSpring;
-//    private Spring mLayoutUpSpring;
-//    private Spring mLayoutRemoveSpring;
     private Spring mRVYSpring;
     private Spring mIconSpring;
     private Spring mLongPressSpringX,mLongPressSpringY,mLongPressSpringT;
     private Spring mLongPressCardSpring;
-    private float rvRapidPosFix = 0;
-    private boolean canSwap = false;
 
     private void setupSpring(){
 
@@ -306,8 +295,7 @@ public class ListActivity extends AppCompatActivity {
 
             @Override
             public void onSpringUpdate(Spring mSpring) {
-                // You can observe the updates in the spring
-                // state by asking its current value in onSpringUpdate.
+
                 float progress = (float) mSpring.getCurrentValue();
 
                 float mScale = (float) SpringUtil.mapValueFromRangeToRange(progress, 0, 1, 0.25, 1);
@@ -322,8 +310,7 @@ public class ListActivity extends AppCompatActivity {
 
             @Override
             public void onSpringUpdate(Spring mSpring) {
-                // You can observe the updates in the spring
-                // state by asking its current value in onSpringUpdate.
+
                 float progress = (float) mSpring.getCurrentValue();
 
                 float transY = (float) SpringUtil.mapValueFromRangeToRange(progress, 0, 1, 0, 64);
@@ -339,8 +326,7 @@ public class ListActivity extends AppCompatActivity {
 
             @Override
             public void onSpringUpdate(Spring mSpring) {
-                // You can observe the updates in the spring
-                // state by asking its current value in onSpringUpdate.
+
                 float progress = (float) mSpring.getCurrentValue();
 
                 float mScale = (float) SpringUtil.mapValueFromRangeToRange(progress, 0, 1, 1, 1.1);
@@ -360,8 +346,7 @@ public class ListActivity extends AppCompatActivity {
 
             @Override
             public void onSpringUpdate(Spring mSpring) {
-                // You can observe the updates in the spring
-                // state by asking its current value in onSpringUpdate.
+
                 float value = (float) mSpring.getCurrentValue();
                 mStatsBar.setAlpha(value);
 
@@ -374,8 +359,7 @@ public class ListActivity extends AppCompatActivity {
 
             @Override
             public void onSpringUpdate(Spring mSpring) {
-                // You can observe the updates in the spring
-                // state by asking its current value in onSpringUpdate.
+
                 float value = (float) mSpring.getCurrentValue();
                 findViewById(R.id.gestureLayout).setAlpha(value);
                 findViewById(R.id.shadow).setAlpha(value);
@@ -390,8 +374,7 @@ public class ListActivity extends AppCompatActivity {
 
             @Override
             public void onSpringUpdate(Spring mSpring) {
-                // You can observe the updates in the spring
-                // state by asking its current value in onSpringUpdate.
+
                 float value = (float) mSpring.getCurrentValue();
                 mCloseBtn.setTranslationY(mCloseBtn.getHeight()*value);
 
@@ -405,8 +388,7 @@ public class ListActivity extends AppCompatActivity {
 
             @Override
             public void onSpringUpdate(Spring mSpring) {
-                // You can observe the updates in the spring
-                // state by asking its current value in onSpringUpdate.
+
                 float value = (float) mSpring.getCurrentValue();
                 if(value<0.5){
 
@@ -429,12 +411,9 @@ public class ListActivity extends AppCompatActivity {
 
             @Override
             public void onSpringUpdate(Spring mSpring) {
-                // You can observe the updates in the spring
-                // state by asking its current value in onSpringUpdate.
                 float value = (float) mSpring.getCurrentValue();
 
                 float mBlurValueRange = (float) SpringUtil.mapValueFromRangeToRange(value, 0, 1, 25, 0.01);
-                float mBlurRadius =(float) Math.max(0.01,Math.min(25,mBlurValueRange));
                 topViewSettings.blurRadius(mBlurValueRange);
 
 
@@ -451,8 +430,6 @@ public class ListActivity extends AppCompatActivity {
 
             @Override
             public void onSpringUpdate(Spring mSpring) {
-                // You can observe the updates in the spring
-                // state by asking its current value in onSpringUpdate.
                 float value = (float) mSpring.getCurrentValue();
 
                 if(value < 0.02 && !shoudAnimateBlurView){
@@ -462,10 +439,6 @@ public class ListActivity extends AppCompatActivity {
                     blurView.setAlpha(Math.max(1,value));
                 }
 
-
-//                float iconScale = (float) SpringUtil.mapValueFromRangeToRange(value, 0, 25, 1, 0.8);
-//                findViewById(R.id.iconlist).setScaleX(iconScale);
-//                findViewById(R.id.iconlist).setScaleY(iconScale);
 //
                 float iconScale2 = (float) SpringUtil.mapValueFromRangeToRange(value, 0, 25, 1, 1.1);
 
@@ -519,8 +492,6 @@ public class ListActivity extends AppCompatActivity {
                         float valueSX = (float) SpringUtil.mapValueFromRangeToRange(value, 0, 1, 1, 2.3076f); // 2.3076f/bgScaleValue
                         float valueSY = (float) SpringUtil.mapValueFromRangeToRange(value, 0, 1, 1, 2.5);
 
-                        cdScaleX= valueSX;
-                        cdScaleY= valueSY;
                         recyclerView.getLayoutManager().findViewByPosition(clickCount).setScaleX(valueSX);
                         recyclerView.getLayoutManager().findViewByPosition(clickCount).setScaleY(valueSY);
 
@@ -540,17 +511,6 @@ public class ListActivity extends AppCompatActivity {
 
 
                 if(recyclerView.getLayoutManager().findViewByPosition(clickCount) !=null){
-
-
-//                    if(clickCount == 0){
-//                        float valueTY = (float) SpringUtil.mapValueFromRangeToRange(value, 0, 1, 0, 612-nowPositionInScreen[1] + 24 + 466 + rvPosFix/3.0);
-//                        recyclerView.getLayoutManager().findViewByPosition(clickCount).setTranslationY(valueTY);
-//                    }
-//                    else{
-//
-//                        float valueTY = (float) SpringUtil.mapValueFromRangeToRange(value, 0, 1, 0, 612-nowPositionInScreen[1] + 24  + 32); // +24 + rvPosFix/3.0
-//                        recyclerView.getLayoutManager().findViewByPosition(clickCount).setTranslationY(valueTY);
-//                    }
 
                     float valueTY = (float) SpringUtil.mapValueFromRangeToRange(value, 0, 1, 0, 612-nowPositionInScreen[1] + 156); // +24 + rvPosFix/3.0 //24  + 32
                     recyclerView.getLayoutManager().findViewByPosition(clickCount).setTranslationY(valueTY);

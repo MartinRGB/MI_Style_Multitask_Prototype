@@ -4,7 +4,6 @@
                  android:layout_width="match_parent"
                  android:layout_height="match_parent"
                  android:id="@+id/mainwindow"
-                 xmlns:app="http://schemas.android.com/apk/res-auto"
                  tools:context="com.martinrgb.waterfalllayout.recyclerview.ListActivity">
 
     <LinearLayout
@@ -15,8 +14,6 @@
         android:orientation="vertical">
 
 
-
-
         <ImageView
             android:id="@+id/iconlist"
             android:src="@drawable/iconlist"
@@ -24,13 +21,6 @@
             android:alpha="1"
             android:layout_height="match_parent"
             android:layout_gravity="center"/>
-
-        <!--<ImageView-->
-            <!--android:id="@+id/statsbarww"-->
-            <!--android:src="@drawable/statshome"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:alpha="1"-->
-            <!--android:layout_height="wrap_content"/>-->
 
     </LinearLayout>
 
@@ -48,27 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!--Any child View here, TabLayout for example-->
-
     </eightbitlab.com.blurview.BlurView>
-    <!--<com.chauthai.overscroll.RecyclerViewBouncy-->
-        <!--android:id="@+id/recycler_view"-->
-        <!--android:overScrollMode="never"-->
-        <!--android:paddingLeft="8dp"-->
-        <!--android:paddingRight="8dp"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"/>-->
-
-
-    <!--<ImageView-->
-        <!--android:id="@+id/fakeblurView"-->
-        <!--android:src="@drawable/background"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:alpha="0"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:layout_gravity="center"/>-->
-
-
 
     <ImageView
         android:id="@+id/blackmask"
@@ -88,6 +58,7 @@
 
     <com.martinrgb.waterfalllayout.recyclerview.TouchRecyclerView
         android:id="@+id/recycler_view"
+        android:background="#00000000"
         android:overScrollMode="always"
         android:paddingTop="171.4dp"
         android:paddingBottom="16dp"
@@ -96,50 +67,22 @@
         android:clipToPadding="false"
         android:clipChildren="false"
         android:layout_width="match_parent"
-        android:layout_height="2340px">
+        android:layout_height="match_parent">
 
     </com.martinrgb.waterfalllayout.recyclerview.TouchRecyclerView>
-
-    <!--<com.chauthai.overscroll.RecyclerViewBouncy-->
-        <!--android:id="@+id/recycler_view"-->
-        <!--app:tension="1000"-->
-        <!--app:friction="200"-->
-
-        <!--app:gapLimit="220"-->
-        <!--app:speedFactor="5"-->
-
-        <!--app:viewCountEstimateSize="5"-->
-        <!--app:maxAdapterSizeToEstimate="20"-->
-        <!--android:paddingTop="171.4dp"-->
-        <!--android:paddingBottom="16dp"-->
-        <!--android:paddingLeft="8dp"-->
-        <!--android:paddingRight="8dp"-->
-        <!--android:clipToPadding="false"-->
-        <!--android:clipChildren="false"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="2160px">-->
-
-
-    <!--</com.chauthai.overscroll.RecyclerViewBouncy>-->
-
-
-
-
-
-
 
     <RelativeLayout
         android:id="@+id/gestureContainer"
         android:clipChildren="false"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:translationZ="20001px"
+        android:translationZ="1000dp"
         android:visibility="invisible">
 
 
         <ImageView
             android:id="@+id/shadow"
-            android:translationY="0px"
+            android:translationY="0dp"
             android:scaleX="1.11"
             android:scaleY="1.05"
             android:layout_width="wrap_content"
@@ -160,12 +103,9 @@
                 android:layout_width="match_parent"
                 android:scaleType="matrix"
                 android:layout_height="match_parent"
-                android:translationZ="20001px"
+                android:translationZ="1000dp"
                 android:background="#00000000"
                 />
-
-
-
 
         </com.martinrgb.waterfalllayout.utils.RoundedCornerLayout>
 
@@ -179,7 +119,7 @@
         android:layout_width="wrap_content"
         android:alpha="0"
         android:layout_height="wrap_content"
-        android:translationZ="20001px"/>
+        android:translationZ="1000dp"/>
 
 
     <ImageView
